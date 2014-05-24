@@ -1,5 +1,5 @@
-puts "Hello, QiitaCmd"
+require 'qiita_cmd'
 
-#require 'qiita_cmd'
-#QiitaCmd::Command.start
+
+QiitaCmd::Command.start
 
