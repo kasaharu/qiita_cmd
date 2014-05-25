@@ -6,16 +6,16 @@ module QiitaCmd
     def get_stocked_items(username)
       conn = InitExecCmd.new.init_exec_cmd
 
-      puts "-------------------------------------"
-      puts "#{username} のストックした投稿取得"
+      say "-------------------------------------"
+      say "#{username} のストックした投稿取得"
       response = conn.get do |req|
         req.url "/api/v1/users/#{username}/stocks"
       end
       parsed_output_data = JSON.parse(response.body)
-      puts "-------------------------------------"
-      puts "stock_count\t title"
+      say "-------------------------------------"
+      say "stock_count\t title"
       parsed_output_data.each do |ticket|
-        puts "        #{ticket["stock_count"]}\t #{ticket["title"]}"
+        say "        #{ticket["stock_count"]}\t #{ticket["title"]}"
       end
     end
   end

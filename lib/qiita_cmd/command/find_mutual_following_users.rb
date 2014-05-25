@@ -14,9 +14,9 @@ module QiitaCmd
       target_users = [user_a, user_b]
       followed_by_target_user = { user_a => follow_by_a, user_b => follow_by_b }
 
-      puts "-------------------------------------"
-      puts "#{user_a} と #{user_b} のフォローしている共通ユーザ取得"
-      puts "-------------------------------------"
+      say "-------------------------------------"
+      say "#{user_a} と #{user_b} のフォローしている共通ユーザ取得"
+      say "-------------------------------------"
       target_users.each do |user|
         t_follow = followed_by_target_user[user]
         response = conn.get do |req|
@@ -40,7 +40,7 @@ module QiitaCmd
             check_flag = false
           end
         end
-        puts compare_a if check_flag
+        say compare_a if check_flag
       end
 
     end
